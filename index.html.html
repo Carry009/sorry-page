@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I'm Really Sorry ❤️</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+  font-family:Arial,sans-serif; overflow:hidden;
+  background:linear-gradient(135deg,#ffd6e7,#fff1f6,#ffd9e8);
+  color:#4a2434;
+}
+.card{
+  width:min(90%,430px); padding:38px 25px; text-align:center;
+  background:rgba(255,255,255,.82); border-radius:28px;
+  box-shadow:0 18px 60px rgba(160,50,90,.22); position:relative; z-index:2;
+}
+.heart{font-size:62px; animation:pulse 1.2s infinite}
+h1{font-size:34px;margin:8px 0 15px}
+p{font-size:19px;line-height:1.6;margin:10px 0}
+.small{font-size:15px;opacity:.75}
+button{
+  border:0; border-radius:999px; padding:14px 24px; margin:10px 5px;
+  font-size:17px; cursor:pointer; transition:.25s;
+}
+.yes{background:#ff4f87;color:white;box-shadow:0 8px 20px #ff4f8744}
+.yes:hover{transform:scale(1.07)}
+.no{background:#f4dce5;color:#6d3a4d}
+#reply{display:none;margin-top:18px;font-weight:bold;font-size:21px}
+.floating{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.floating span{position:absolute;bottom:-40px;animation:float 7s linear infinite;opacity:.55}
+@keyframes pulse{50%{transform:scale(1.13)}}
+@keyframes float{to{transform:translateY(-115vh) rotate(360deg);opacity:0}}
+</style>
+</head>
+<body>
+<div class="floating">
+<span style="left:8%;animation-delay:0s">❤️</span>
+<span style="left:20%;animation-delay:2s">💕</span>
+<span style="left:35%;animation-delay:4s">💗</span>
+<span style="left:52%;animation-delay:1s">❤️</span>
+<span style="left:70%;animation-delay:3s">💖</span>
+<span style="left:88%;animation-delay:5s">💕</span>
+</div>
+
+<div class="card">
+  <div class="heart">🥺❤️</div>
+  <h1>I'm Really Sorry...</h1>
+  <p><b>Ab toh maan jaa pleaseee 🥺</b></p>
+  <p>I know I messed up, and I'm genuinely sorry.</p>
+  <p class="small">One small request... please forgive me? 🥹</p>
+  <button class="yes" onclick="forgive()">Okay, maaf kiya ❤️</button>
+  <button class="no" onclick="forgive()">Chal re, kar diya maaf 😌❤️</button>
+  <div id="reply"></div>
+  <p class="small" style="margin-top:24px;">Love from Satyam ❤️</p>
+</div>
+
+<script>
+function forgive(){
+  document.getElementById("reply").style.display="block";
+  document.getElementById("reply").innerHTML="YAYYY! 🥹❤️ I promise, I'll make it up to you. 💕";
+  for(let i=0;i<25;i++){
+    let h=document.createElement("span");
+    h.innerHTML="❤️";
+    h.style.position="fixed";
+    h.style.left=Math.random()*100+"vw";
+    h.style.top=Math.random()*100+"vh";
+    h.style.fontSize=(18+Math.random()*25)+"px";
+    h.style.zIndex=5;
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),1800);
+  }
+}
+function tryAgain(){
+  document.getElementById("reply").style.display="block";
+  document.getElementById("reply").innerHTML="Pleaseee 🥺👉👈 Ek baar aur soch lo... ❤️";
+}
+</script>
+</body>
+</html>
